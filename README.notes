@@ -1,0 +1,57 @@
+
+# 1. venv basics
+python3.8 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+
+# 2. load schema
+python manage.py migrate
+
+
+# 3. load test data
+#	test_users.xml 	: this sets up 2 customers (user1, user2) and 2 agents (agent1, agent2)
+#			  [in all cases password = username]
+#			  Though customers and agents are both stored in the django.contrib.auth.models.User table
+#			  they are differentiated by the instance of django.contrib.auth.models.Group each user links to.
+#			  NB this setup is !!!essential!!! for the below tests to function correctly.
+#
+#	test_tickets.xml: some very useful stub data to begin testing.
+#			  NB not essential if you wish to bypass this, and setup your own data via the screens 
+#
+python manage.py loaddata --format xml test_users.xml
+python manage.py loaddata --format xml test_tickets.xml
+
+
+# 4 run testserver
+python manage.py runserver
+
+
+# 5. tests [manual]
+# Following tests have been completed
+#
+	- [Customer] Create support ticket
+	Can this page be viewed by only customers?	YES
+	Can the customer submit a support request?	YES
+
+	- [Customer] My requests
+	Can this page be viewed by only customers?	YES
+	Can the customer only see their requests?	YES
+
+	- [Agent] All requests
+	Can this page be viewed by only agents?		YES
+	Can the agent only see their requests?		YES
+
+	- [Agent] View request
+	Can this page be viewed by only agents?		YES
+	Is the correct request returned?		YES
+	Is the Mark as completed button functional?	YES
+
+
+# 6. missing functionalty
+# Following funtionality is currently missing
+#
+	- [Agent] All requests
+	Are the quick actions functional?
+	Reassign to someone
+	Mark as completed
