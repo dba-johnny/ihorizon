@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid p-0">
+	<div class="row bg-secondary p-0 mb-2" style="height: 35px; opacity: 0.5">
+	</div>
+</div>
+<div class="clearfix w-50 mx-auto">
+	<div class="d-block float-left">
+		<a class="btn btn-outline-primary" href="{% url 'logout' %}">Logout</a>
+	</div>
+	<div class="d-block float-right ms-auto">
+		{% block top_buttons %}
+		{% endblock %}
+	</div>
+</div>
+{% block sub_content %}
+{% endblock %}
+
+{% endblock %}

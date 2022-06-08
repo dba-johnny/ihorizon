@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="supportdesk.ticket" pk="1">
+    <field name="customer" rel="ManyToOneRel" to="auth.user">3</field>
+    <field name="agent" rel="ManyToOneRel" to="auth.user">5</field>
+    <field name="created" type="DateTimeField">2022-06-07T10:45:05+00:00</field>
+    <field name="resolved" type="DateTimeField"><None></None></field>
+    <field name="is_complete" type="BooleanField">False</field>
+    <field name="is_priority" type="BooleanField">False</field>
+    <field name="summary" type="CharField">EXAMPLE TICKET 0001</field>
+    <field name="description" type="TextField">Error-5364: Standard Priority: Raised by User1, assigned to Agent1</field>
+  </object>
+  <object model="supportdesk.ticket" pk="2">
+    <field name="customer" rel="ManyToOneRel" to="auth.user">3</field>
+    <field name="agent" rel="ManyToOneRel" to="auth.user">6</field>
+    <field name="created" type="DateTimeField">2022-06-07T17:45:05+00:00</field>
+    <field name="resolved" type="DateTimeField"><None></None></field>
+    <field name="is_complete" type="BooleanField">False</field>
+    <field name="is_priority" type="BooleanField">True</field>
+    <field name="summary" type="CharField">EXAMPLE TICKET 0002</field>
+    <field name="description" type="TextField">Error-9357: High Priority: Raised by User1, assigned to Agent2</field>
+  </object>
+  <object model="supportdesk.ticket" pk="3">
+    <field name="customer" rel="ManyToOneRel" to="auth.user">3</field>
+    <field name="agent" rel="ManyToOneRel" to="auth.user">5</field>
+    <field name="created" type="DateTimeField">2022-06-08T09:45:05+00:00</field>
+    <field name="resolved" type="DateTimeField"><None></None></field>
+    <field name="is_complete" type="BooleanField">False</field>
+    <field name="is_priority" type="BooleanField">True</field>
+    <field name="summary" type="CharField">EXAMPLE TICKET 0003</field>
+    <field name="description" type="TextField">Error-1276: High Priority: Raised by User1, assigned to Agent1</field>
+  </object>
+  <object model="supportdesk.ticket" pk="4">
+    <field name="customer" rel="ManyToOneRel" to="auth.user">4</field>
+    <field name="agent" rel="ManyToOneRel" to="auth.user">5</field>
+    <field name="created" type="DateTimeField">2022-06-07T11:45:05+00:00</field>
+    <field name="resolved" type="DateTimeField"><None></None></field>
+    <field name="is_complete" type="BooleanField">False</field>
+    <field name="is_priority" type="BooleanField">False</field>
+    <field name="summary" type="CharField">EXAMPLE TICKET 0004</field>
+    <field name="description" type="TextField">Error-6823: Standard Priority: Raised by User2, assigned to Agent1</field>
+  </object>
+  <object model="supportdesk.ticket" pk="5">
+    <field name="customer" rel="ManyToOneRel" to="auth.user">4</field>
+    <field name="agent" rel="ManyToOneRel" to="auth.user">6</field>
+    <field name="created" type="DateTimeField">2022-06-08T10:45:05+00:00</field>
+    <field name="resolved" type="DateTimeField"><None></None></field>
+    <field name="is_complete" type="BooleanField">False</field>
+    <field name="is_priority" type="BooleanField">False</field>
+    <field name="summary" type="CharField">EXAMPLE TICKET 0005</field>
+    <field name="description" type="TextField">Error-8789: Standard Priority: Raised by User2, assigned to Agent2</field>
+  </object>
+</django-objects>

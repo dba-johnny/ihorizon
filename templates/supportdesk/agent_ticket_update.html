@@ -1,0 +1,21 @@
+{% extends 'supportdesk/base_support_desk.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block top_buttons %}
+	<a class="btn btn-outline-primary" href="{% url 'supportdesk_tickets' %}">Open Requests ({{ n_tickets }})</a>
+{% endblock %}
+
+{% block sub_content %}
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="card border-primary bg-light w-100">
+			<div class="card-body p-5">
+				<h4 class="card-title mb-2">{{ ticket.summary }} {% if ticket.is_priority %}&nbsp;&nbsp;<span class="badge badge-pill bg-danger text-white">High Priority</span>{% endif %} <form class="float-right" action="{% url 'supportdesk_ticket_update' ticket.id %}" method="post">{% csrf_token %} <input style="display: none;" type="checkbox" name="is_complete" id="id_is_complete" checked><button type="submit" class="btn btn-success bg-success text-white">Mark as Complete</button></form></h4> 
+				<p class="mb-3"><span class="badge badge-outline-secondary"><img class="align-middle" src="{% static 'assets/img/icons/theme/general/clipboard.svg'%}"></img>&nbsp;Created {{ ticket.verbal_offset }} ago</span><span class="badge badge-outline-secondary"><img class="align-middle" src="{% static 'assets/img/icons/theme/general/user.svg'%}"></img>&nbsp;Assigned to {{ ticket.agent.username }}</span></p>
+				<p class="card-text">{{ ticket.description }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

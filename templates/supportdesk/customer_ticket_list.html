@@ -1,0 +1,16 @@
+{% extends 'supportdesk/base_ticket_list.html' %}
+{% load static %}
+
+{% block top_buttons %}
+	<a class="btn btn-outline-primary" href="{% url 'supportdesk_tickets' %}">My Requests ({{ n_tickets }})</a>
+	<a class="btn btn-primary" href="{% url 'supportdesk_ticket_create' %}"><img class="align-top" src="{% static 'assets/img/icons/interface/plus.svg' %}" style="filter: invert(100%);">  New Request</a>
+{% endblock %}
+
+{% block card_header %}
+	<h2 class="text-primary">My requests</h2>
+{% endblock %}
+
+{% block card_buttons %}
+    <p class="mb-0"><span class="badge badge-outline-secondary"><img class="align-middle" src="{% static 'assets/img/icons/theme/general/clipboard.svg'%}"></img>&nbsp;Created {{ ticket.verbal_offset }} ago</span><span class="badge badge-outline-secondary"><img class="align-middle" src="{% static 'assets/img/icons/theme/general/user.svg'%}"></img>&nbsp;Assigned to {{ ticket.agent.username }}</span></p>
+{% endblock %}
+

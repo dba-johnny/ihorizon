@@ -1,0 +1,17 @@
+{% extends 'supportdesk/base_ticket_list.html' %}
+{% load static %}
+
+{% block top_buttons %}
+	<a class="btn btn-outline-primary" href="">Open Requests ({{ n_tickets }})</a>
+{% endblock %}
+
+{% block card_header %}
+	<h2 class="text-primary">All my open requests</h2>
+{% endblock %}
+
+{% block card_buttons %}
+	<button class="btn btn-outline-info"><img class="align-middle" src="{% static 'assets/img/icons/theme/general/user.svg'%}"></img>&nbsp;Reassign to someone</button>
+	<button class="btn btn-outline-success"><img class="align-middle" src="{% static 'assets/img/icons/interface/check.svg'%}"></img>&nbsp;Mark as completed</button>
+	<a href="{% url 'supportdesk_ticket_update' ticket.id %}" class="stretched-link"></a>
+{% endblock %}
+

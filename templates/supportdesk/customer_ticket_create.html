@@ -1,0 +1,30 @@
+{% extends 'supportdesk/base_support_desk.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block top_buttons %}
+	<a class="btn btn-outline-primary" href="{% url 'supportdesk_tickets' %}">My Requests ({{ n_tickets }})</a>
+	<a class="btn btn-primary" href="{% url 'supportdesk_ticket_create' %}"><img class="align-top" src="{% static 'assets/img/icons/interface/plus.svg' %}" style="filter: invert(100%);">  New Request</a>
+{% endblock %}
+
+{% block sub_content %}
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="card border-primary bg-light">
+			<div class="card-body p-5">
+				<h2 class="text-primary">Request Information</h2>
+				<form action="{% url 'supportdesk_ticket_create' %}" method="post">
+					{% csrf_token %}
+					{{ form.summary | as_crispy_field }}
+					{{ form.description | as_crispy_field }}
+					<div class="custom-control custom-switch text-muted mb-3">
+						<input type="checkbox" name="is_priority" class="custom-control-input" id="id_is_priority">
+						<label class="custom-control-label" for="id_is_priority">{{ form.is_priority.label }}</label>
+					</div>
+					<button type="submit" class="btn btn-success bg-primary w-100" style="font-size: 1.35em;">Create Support Request</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

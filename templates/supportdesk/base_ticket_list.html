@@ -1,0 +1,22 @@
+{% extends 'supportdesk/base_support_desk.html' %}
+
+{% block sub_content %}
+<div class="container mt-5">
+	{% block card_header %}
+	{% endblock %}
+	{% for ticket in ticket_list %}
+	<div class="row justify-content-center w-100">
+		<div class="card border-primary w-100">
+			<div class="card-body">
+				<h4 class="card-title">{{ ticket.summary }} {% if ticket.is_priority %}&nbsp;&nbsp;<span class="badge badge-pill bg-danger text-white">High Priority</span>{% endif %} <span class="float-right badge badge-pill {% if ticket.is_complete %}bg-success{% else %}bg-info{% endif %} text-white">{% if ticket.is_complete %}Completed{% else %}In progress{% endif %}</span></h4> 
+				<p class="card-text">{{ ticket.description }}</p>
+				{% block card_buttons %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}
+

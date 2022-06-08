@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="auth.group" pk="1">
+    <field name="name" type="CharField">Customer</field>
+    <field name="permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.group" pk="2">
+    <field name="name" type="CharField">Agent</field>
+    <field name="permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.user" pk="3">
+    <field name="password" type="CharField">pbkdf2_sha256$320000$XmYIPXNVe7sCUpJ9mqTDiO$QWH3J9Vid1KTsz8iYLjfBgKuzoAXWufhHGIyU/bSUf8=</field>
+    <field name="last_login" type="DateTimeField"><None></None></field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">user1</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField"></field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2022-06-07T10:44:51.766834+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"><object pk="1"></object></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.user" pk="4">
+    <field name="password" type="CharField">pbkdf2_sha256$320000$2UWkdLdNfJeEWD970IS4xC$zB0jW8xjQOwScw61KbzWVMZP0Jx8+xyQMgY+SzHA7Ew=</field>
+    <field name="last_login" type="DateTimeField"><None></None></field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">user2</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField"></field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2022-06-07T10:45:05.696586+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"><object pk="1"></object></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.user" pk="5">
+    <field name="password" type="CharField">pbkdf2_sha256$320000$Be6jBoSdthD2tV4sM6aQKg$3ky2eMxvQ+CFx621XLUBTazWtDxZE1cfeC+isMzSxyg=</field>
+    <field name="last_login" type="DateTimeField"><None></None></field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">agent1</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField"></field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2022-06-07T10:45:39.452197+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"><object pk="2"></object></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.user" pk="6">
+    <field name="password" type="CharField">pbkdf2_sha256$320000$YobweTd4KokC6eLx14wpWk$7qAHVdRRlcON1WYSOU/TmT/iraa+YdUFpcjMOGKP+9E=</field>
+    <field name="last_login" type="DateTimeField"><None></None></field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">agent2</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField"></field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2022-06-07T10:46:46.201404+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"><object pk="2"></object></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+</django-objects>
